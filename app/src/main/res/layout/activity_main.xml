@@ -1,0 +1,257 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/txt_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PT XYZ"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="50dp"/>
+
+    <ImageView
+        android:id="@+id/location"
+        app:tint="@color/orange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/outline_location_on_24"
+        android:layout_below="@id/txt_title"
+        android:layout_marginTop="5dp"
+        android:layout_alignStart="@id/txt_title"
+        />
+
+    <TextView
+        android:id="@+id/txt_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sleman"
+        android:textSize="12sp"
+        android:layout_alignTop="@id/location"
+        android:layout_toRightOf="@id/location"
+        android:layout_marginStart="5dp"
+        />
+
+    <!-- Update box -->
+    <RelativeLayout
+        android:id="@+id/update_info_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_info"
+        android:padding="10dp"
+        android:layout_below="@id/txt_location"
+        android:layout_marginTop="16dp"
+        android:layout_alignStart="@id/txt_title"
+        android:layout_marginRight="50dp">
+
+        <TextView
+            android:id="@+id/txt_update_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Informasi perubahan data katalog"
+            android:textColor="@color/grey"
+            android:textSize="10sp"
+            android:layout_centerHorizontal="true"
+            />
+
+        <!-- Last Update -->
+        <TextView
+            android:id="@+id/txt_last_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pembaruan terakhir: "
+            android:textColor="@color/grey"
+            android:textSize="10sp"
+            android:layout_below="@id/txt_update_info"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="60dp"
+            />
+
+        <!-- Last Update Date -->
+        <TextView
+            android:id="@+id/txt_last_update_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/last_update_date"
+            android:textColor="#EE6627"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:layout_toEndOf="@id/txt_last_update"
+            android:layout_alignBaseline="@id/txt_last_update"
+            />
+
+        <!-- Next Update -->
+        <TextView
+            android:id="@+id/txt_next_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pembaruan selanjutnya:"
+            android:textColor="@color/grey"
+            android:textSize="10sp"
+            android:layout_below="@id/txt_last_update"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="50dp"
+            />
+
+        <!-- Next Update Date -->
+        <TextView
+            android:id="@+id/txt_next_update_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/next_update_date"
+            android:textColor="#FF5722"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:layout_toEndOf="@id/txt_next_update"
+            android:layout_alignBaseline="@id/txt_next_update"
+            />
+
+    </RelativeLayout>
+
+    <!-- Tampilan 4 tombol -->
+    <RelativeLayout
+        android:id="@+id/buttons_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/update_info_box"
+        android:layout_marginTop="50dp"
+        android:layout_alignStart="@id/update_info_box"
+        android:layout_marginRight="50dp">
+
+        <!-- Kotak pertama -->
+        <RelativeLayout
+            android:id="@+id/katalog_container"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/bg_button"
+            android:padding="18dp">
+
+            <ImageView
+                android:id="@+id/icon_katalog"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                app:tint="@color/orange"
+                android:src="@drawable/baseline_manage_search_24"
+                android:layout_centerHorizontal="true"/>
+
+            <TextView
+                android:id="@+id/txt_katalog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Katalog Tender"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:layout_below="@id/icon_katalog"
+                android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true"/>
+        </RelativeLayout>
+
+        <!-- Kotak kedua -->
+        <RelativeLayout
+            android:id="@+id/saved_container"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_toRightOf="@id/katalog_container"
+            android:layout_alignTop="@id/katalog_container"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/bg_button"
+            android:padding="18dp">
+
+            <ImageView
+                android:id="@+id/icon_saved"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                app:tint="@color/orange"
+                android:src="@drawable/baseline_bookmark_added_24"
+                android:layout_centerHorizontal="true"/>
+
+            <TextView
+                android:id="@+id/txt_saved"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tender Tersimpan"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:layout_below="@id/icon_saved"
+                android:layout_marginTop="15dp"
+                android:layout_centerHorizontal="true"/>
+
+        </RelativeLayout>
+
+        <!-- Kotak ketiga -->
+        <RelativeLayout
+            android:id="@+id/report_container"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_below="@id/katalog_container"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/bg_button"
+            android:padding="20dp">
+
+            <ImageView
+                android:id="@+id/icon_report"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                app:tint="@color/orange"
+                android:src="@drawable/baseline_insert_chart_24"
+                android:layout_centerHorizontal="true"/>
+
+            <TextView
+                android:id="@+id/txt_report"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Laporan Statistik"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:layout_below="@id/icon_report"
+                android:layout_marginTop="15dp"
+                android:layout_centerHorizontal="true"/>
+
+        </RelativeLayout>
+
+        <!-- Kotak keempat -->
+        <RelativeLayout
+            android:id="@+id/settings_container"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_toRightOf="@id/report_container"
+            android:layout_alignTop="@id/report_container"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/bg_button"
+            android:padding="20dp">
+
+            <ImageView
+                android:id="@+id/icon_settings"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                app:tint="@color/orange"
+                android:src="@drawable/baseline_settings_24"
+                android:layout_centerHorizontal="true"/>
+
+            <TextView
+                android:id="@+id/txt_settings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pengaturan"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:layout_below="@id/icon_settings"
+                android:layout_marginTop="15dp"
+                android:layout_centerHorizontal="true"/>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
